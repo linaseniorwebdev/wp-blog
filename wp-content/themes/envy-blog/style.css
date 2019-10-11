@@ -652,6 +652,18 @@ a:active {
 	height: 80px;
 }
 
+@media screen and (max-width: 992px) {
+	.nav-bar-separator {
+		height: 95px !important;
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.nav-bar-separator {
+		height: 140px !important;
+	}
+}
+
 /*
 # Nav Bar Layouts
 ----------------------------------------*/
@@ -3009,7 +3021,12 @@ object {
 }
 
 .blog-layout .content-wrap {
-	padding-bottom: 60px;
+	/*padding-bottom: 60px;*/
+	padding-top: 35px;
+}
+
+.blog-layout .content-wrap:first-child {
+	padding-top: 0px;
 }
 
 .blog-list .content-wrap {
@@ -3131,7 +3148,7 @@ object {
 ----------------------------------*/
 .blog-layout .no-featured-img,
 .blog-layout .is-link {
-	border: 2px solid #727272;
+	border: 2px solid rgba(0, 0, 0, 0.1);
 	padding: 0 30px 25px;
 }
 
@@ -3219,7 +3236,7 @@ object {
 }
 
 .blog-layout .order-position.entry-meta {
-	margin-top: 30px;
+	margin-top: 0;
 }
 
 .blog-layout .order-position-0 {
@@ -3326,7 +3343,7 @@ object {
 .post-flex.no-featured-img .content-holder,
 .post-flex.is-link .content-holder {
 	width: 100%;
-	padding: 60px;
+	/*padding: 60px;*/
 }
 
 .is-quote .content-holder {
@@ -3496,7 +3513,7 @@ object {
   Entry Footer
 ----------------------------------*/
 .blog-layout .entry-footer {
-	margin-top: 30px;
+	margin-top: 0;
 }
 
 .blog-layout.masonry .entry-footer,
@@ -4361,12 +4378,12 @@ object {
 	.post-flex .content-holder,
 	.post-flex .featured-image {
 		width: 100%;
-		text-align: center;
+		text-align: left;
 		margin-right: 0;
 	}
 
 	.post-flex .content-holder {
-		margin-top: 40px;
+		margin-top: 0;
 	}
 
 	.blog-layout-6 .featured-image img,
@@ -4472,7 +4489,7 @@ object {
 
 	.post-flex.no-featured-img .content-holder,
 	.post-flex.is-link .content-holder {
-		padding: 10px 20px 20px;
+		padding: 0;
 	}
 
 	.blog-layout .is-quote {
@@ -5361,7 +5378,7 @@ h1.woocommerce-products-header__title.page-title {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
-	margin-top: 80px;
+	margin-top: 0;
 }
 
 .footer-widgets {
@@ -6409,4 +6426,26 @@ a.liked span.post-like-count,
     box-shadow: 0 -.3em rgba(0, 0, 0, 0.2);
     height: 1em;
   }
+}
+
+/**
+Additional parts. Inserted by IWorker.
+ */
+
+.i-shadow {
+	-webkit-box-shadow: 0 5px 5px 0 #ccc;
+	   -moz-box-shadow: 0 5px 5px 0 #ccc;
+	        box-shadow: 0 5px 5px 0 #ccc;
+}
+
+.no-featured-img {
+	cursor: pointer;
+	background-image: linear-gradient(to left, transparent, transparent 50%, rgba(0, 218, 218, 0.05) 50%, rgba(0, 218, 218, 0.05));
+	background-position: 100% 0;
+	background-size: 200% 100%;
+	transition: all .25s ease-in;
+}
+
+.no-featured-img:hover {
+	background-position: 0 0;
 }

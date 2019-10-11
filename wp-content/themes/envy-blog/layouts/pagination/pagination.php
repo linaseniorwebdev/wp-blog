@@ -23,8 +23,8 @@ if ($wp_query->max_num_pages <= 1) {
             'current' => max(1, get_query_var('paged')),
             'total' => $wp_query->max_num_pages,
             'mid_size' => 4,
-            'prev_text' => __('Previous', 'envy-blog'),
-            'next_text' => __('Next', 'envy-blog'),
+            'prev_text' => __('前へ', 'envy-blog'),
+            'next_text' => __('次へ', 'envy-blog'),
             'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'envy-blog') . ' </span>',
         ));
         ?>

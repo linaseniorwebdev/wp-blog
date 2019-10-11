@@ -10,7 +10,6 @@
 
 get_header();
 
-$blog_layout            = get_theme_mod( 'envy-blog_archive_page_layout', 'blog-layout-1' );
 ?>
 
     <div class="row">
@@ -23,24 +22,11 @@ $blog_layout            = get_theme_mod( 'envy-blog_archive_page_layout', 'blog-
                     $blog_classes = array( 'blog-layout' );
                     $blog_classes[] = $blog_layout;
 
-                    if ( $blog_layout == 'blog-layout-1' ) {
+                    $blog_classes[] = 'has-left-align-image';
 
-                        $columns = get_theme_mod( 'envy-blog_archive_page_layout1_display_columns', 'col-3' );
-                        $blog_classes[] = 'masonry';
-                        $blog_classes[] = 'has-'.$columns;
-
-                        echo '<div class="'.esc_attr( implode( ' ', $blog_classes ) ).'">';
-                        get_template_part( 'layouts/blog/blog-layout-1', get_post_format() );
-                        echo '</div><!-- .'.esc_attr( $blog_layout ).'-->';
-
-                    } elseif ( $blog_layout == 'blog-layout-6' ) {
-                        $blog_classes[] = 'has-left-align-image';
-
-                        echo '<div class="'.esc_attr( implode( ' ', $blog_classes ) ).'">';
-                        get_template_part( 'layouts/blog/blog-layout-6', get_post_format() );
-                        echo '</div><!-- .'.esc_attr( $blog_layout ).'-->';
-
-                    }
+                    echo '<div class="'.esc_attr( implode( ' ', $blog_classes ) ).'">';
+                    get_template_part( 'layouts/blog/blog-layout-2', get_post_format() );
+                    echo '</div><!-- .'.esc_attr( $blog_layout ).'-->';
 
                     // Pagination
                     get_template_part( 'layouts/pagination/pagination', get_post_format() );

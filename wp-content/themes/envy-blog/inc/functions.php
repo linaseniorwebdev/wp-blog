@@ -91,13 +91,13 @@ if ( !function_exists( 'envy_blog_blog_read_more_button ' ) ) {
     function envy_blog_blog_read_more_button() {
         $blog_class         = array();
 
-        $blog_read_more_text                    = esc_html__( 'Discover', 'envy-blog' );
+        $blog_read_more_text                    = esc_html__( '続きを読む', 'envy-blog' );
         $blog_read_more_button_type             = 'arrow';
         $blog_read_more_button_scheme           = 'light';
         $blog_read_more_button_transparency     = 'transparent';
 
         if ( is_single() ) {
-            $blog_read_more_text                    = esc_html__( 'Discover', 'envy-blog' );
+            $blog_read_more_text                    = esc_html__( '続きを読む', 'envy-blog' );
             $blog_read_more_button_type             = 'arrow';
             $blog_read_more_button_scheme           = 'light';
         }
