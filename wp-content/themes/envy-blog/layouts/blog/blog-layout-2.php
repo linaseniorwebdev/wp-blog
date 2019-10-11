@@ -25,7 +25,7 @@ while ( have_posts() ) : the_post();
     }
     ?>
 
-    <article <?php post_class( $columns ); ?>>
+    <article <?php post_class( $columns ); ?> style="position: relative;">
         <div class="<?php echo esc_attr( implode(' ',$post_wrap_class) ); ?>">
             <?php if ( has_post_thumbnail() ) :
                 $image_id               = get_post_thumbnail_id( $post->ID );
@@ -93,6 +93,11 @@ while ( have_posts() ) : the_post();
             </div><!-- .content-holder -->
             
         </div><!-- .post-wrap -->
+	    <?php
+	    if (get_post_time() > (int) date('U') - 5 * 60 * 60 * 24) {
+		    echo '<div class="ribbon"><span>新しい</span></div>';
+	    }
+	    ?>
     </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php endwhile;

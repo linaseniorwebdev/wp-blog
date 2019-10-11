@@ -41,14 +41,16 @@ get_header();
         </div><!-- #primary -->
 	    <aside id="secondary" class="right-sidebar" role="complementary" style="font-family: 'Noto Serif JP', Sans-serif">
 		    <h2>カテゴリー</h2>
-		    <ul>
-			    <?php
-			    $categories = get_categories();
-			    foreach ($categories as $category) {
-				    echo '<li><a href="' . get_home_url() . '/?cat=' . $category->term_id . '">' . $category->name . '</a></li>';
-			    }
-			    ?>
-		    </ul>
+		    <section style="width: 100%; padding-left: 30px;">
+			    <ul>
+				    <?php
+				    $categories = get_categories();
+				    foreach ($categories as $category) {
+					    echo '<li><a href="' . get_home_url() . '/?cat=' . $category->term_id . '">' . $category->name . '（' . $category->count . '）</a></li>';
+				    }
+				    ?>
+			    </ul>
+		    </section>
 	    </aside>
     </div><!-- .row -->
 
