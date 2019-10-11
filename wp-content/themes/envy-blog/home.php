@@ -12,8 +12,8 @@ get_header();
 
 ?>
 
-    <div class="row">
-        <div id="primary" class="content-area">
+    <div class="row has-right-sidebar">
+        <div id="primary" class="content-area has-right-sidebar">
             <main id="main" class="site-main" role="main">
                 <?php
                 if ( have_posts() ) :
@@ -39,7 +39,17 @@ get_header();
 
             </main><!-- #main -->
         </div><!-- #primary -->
-
+	    <aside id="secondary" class="right-sidebar" role="complementary" style="font-family: 'Noto Serif JP', Sans-serif">
+		    <h2>カテゴリー</h2>
+		    <ul>
+			    <?php
+			    $categories = get_categories();
+			    foreach ($categories as $category) {
+				    echo '<li><a href="' . get_home_url() . '/?cat=' . $category->term_id . '">' . $category->name . '</a></li>';
+			    }
+			    ?>
+		    </ul>
+	    </aside>
     </div><!-- .row -->
 
 <?php get_footer();
